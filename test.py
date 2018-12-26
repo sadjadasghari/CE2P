@@ -76,26 +76,47 @@ def get_palette(num_cls):
     return palette
 
 def get_lip_palette():  
+# class_names = ['BG','Hat', 'Hair','Glove', 'Sunglasses', 'Upper-clothes', 'Dress', 'Coats', 'Socks', 'Pants','Jumpsuits',  'Scarf', 'Skirt',  'Face', 'Left-arm','Right-arm',   'Left-leg','Right-leg','Left-shoe','Right-shoe' ]
     palette = [ 0,0,0,
           128,0,0,
-          255,0,0,
+          0, 0, 0, # 255,0,0,
           0,85,0,
           170,0,51,
-          255,85,0,
-          0,0,85,
+          0, 0, 0, # 255,85,0,
+          0, 0, 0, # 0,0,85,
           0,119,221,
-          85,85,0,
-          0,85,85,
-          85,51,0,
-          52,86,128,
-          0,128,0,
-          0,0,255,
-          51,170,221,
-          0,255,255,
-          85,255,170,
-          170,255,85,
-          255,255,0,
-          255,170,0] 
+          0, 0, 0, # 85,85,0,
+          0, 0, 0, # 0,85,85,
+          0, 0, 0, # 85,51,0,
+          0, 0, 0, # 52,86,128,
+          0, 0, 0, # 0,128,0,
+          0, 0, 0, # 0,0,255,
+          0, 0, 0, # 51,170,221,
+          0, 0, 0, # 0,255,255,
+          0, 0, 0, # 85,255,170,
+          0, 0, 0, # 170,255,85,
+          0, 0, 0, # 255,255,0,
+          0, 0, 0] # 255,170,0]
+    palette = [ 0,0,0,
+          128,0,0,
+          255, 0, 0, # 0, 0, 0, #
+          0,85,0,
+          170,0,51,
+          255, 85, 0, # 0, 0, 0, #
+          0, 0, 85, # 0, 0, 0, #
+          0,119,221,
+          85, 85, 0, # 0, 0, 0, #
+          0, 85, 85,
+          85, 51, 0, #
+          52, 86, 128,#
+          0, 128, 0, #
+          0, 0, 255, #
+          51, 170, 221, #
+          0, 255, 255, #
+          85, 255, 170, #
+          170, 255, 85, #
+          255, 255, 0, #
+          255, 170, 0] #
     return palette 
  
 def scale_image(image, scale):  
@@ -196,7 +217,7 @@ def main():
         seg_pred = np.asarray(np.argmax(output, axis=2), dtype=np.uint8)
 
         output_im = PILImage.fromarray(seg_pred) 
-        output_im.putpalette(palette)
+        # output_im.putpalette(palette)
         output_im.save(args.save_dir+name[0]+'.png')
          
      
