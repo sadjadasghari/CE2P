@@ -1,8 +1,8 @@
-DATA_DIRECTORY='./dataset/LIP'
-DATA_LIST_PATH='./dataset/list/lip/testList.txt' 
-NUM_CLASSES=20 
-RESTORE_FROM='./snapshots/LIP_CE2P_trainVal.pth'
-SAVE_DIR='./outputs_test/' 
+DATA_DIRECTORY='./dataset' # /LIP'
+DATA_LIST_PATH='./dataset/list/vinnie/eval_vinnie.txt' # lip/test.txt' # List.txt' _2
+NUM_CLASSES=20 # 4
+RESTORE_FROM='./snapshots/LIP_CE2P_trainVal_321_681.pth'
+SAVE_DIR='./outputs_test_vinnie_3/'
 INPUT_SIZE='473,473'
 GPU_ID=0
  
